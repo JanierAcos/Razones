@@ -458,4 +458,9 @@ footer {
     .carousel-slide {
         gap: 15px;
     }
+
+    .center-text {
+        text-align: center;
+        color: #6a1b9a
+    }
 }
