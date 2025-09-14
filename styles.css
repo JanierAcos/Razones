@@ -1,0 +1,461 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #f8f9fa, #e3f2fd);
+    min-height: 100vh;
+    color: #4a148c;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(to right, #ab47bc, #7b1fa2);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 15px rgba(123, 31, 162, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Secciones */
+.section {
+    display: none;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #7b1fa2;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.header p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #4a148c;
+}
+
+/* Carrusel de tulipanes */
+.carousel-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(171, 71, 188, 0.8);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.carousel-control:hover {
+    background: rgba(142, 36, 170, 0.9);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-control.prev {
+    left: 15px;
+}
+
+.carousel-control.next {
+    right: 15px;
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.carousel-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicator.active {
+    background: #ab47bc;
+    transform: scale(1.2);
+}
+
+/* Tulipán */
+.tulipan {
+    width: 180px;
+    height: 300px;
+    position: relative;
+    filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.2));
+}
+
+.stem {
+    width: 10px;
+    height: 0;
+    background: linear-gradient(to bottom, #81c784, #4caf50);
+    position: absolute;
+    bottom: 0;
+    left: 85px;
+    border-radius: 5px 5px 0 0;
+    animation: growStem 2s forwards;
+    animation-delay: calc(var(--delay) * 0.5s);
+}
+
+.leaf {
+    width: 30px;
+    height: 0;
+    background: linear-gradient(to right, #81c784, #4caf50);
+    position: absolute;
+    border-radius: 0 25px 25px 0;
+    bottom: 70px;
+    left: 95px;
+    transform-origin: left;
+    transform: rotate(-15deg);
+    animation: growLeaf 2s forwards;
+    animation-delay: calc(var(--delay) * 0.5s + 1s);
+}
+
+.flower {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    animation: growFlower 3s forwards;
+    animation-delay: calc(var(--delay) * 0.5s + 2s);
+}
+
+.petal {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-radius: 50% 50% 40% 40%;
+    transform-origin: bottom center;
+    background: linear-gradient(to bottom, var(--tulip-color), var(--tulip-dark));
+    box-shadow: inset 0px -5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.petal1 {
+    animation: growPetal 2s forwards;
+    animation-delay: calc(var(--delay) * 0.5s + 3s);
+}
+
+.petal2 {
+    transform: rotate(72deg);
+    animation: growPetal 2s forwards;
+    animation-delay: calc(var(--delay) * 0.5s + 3.2s);
+}
+
+.petal3 {
+    transform: rotate(144deg);
+    animation: growPetal 2s forwards;
+    animation-delay: calc(var(--delay) * 0.5s + 3.4s);
+}
+
+.petal4 {
+    transform: rotate(216deg);
+    animation: growPetal 2s forwards;
+    animation-delay: calc(var(--delay) * 0.5s + 3.6s);
+}
+
+.petal5 {
+    transform: rotate(288deg);
+    animation: growPetal 2s forwards;
+    animation-delay: calc(var(--delay) * 0.5s + 3.8s);
+}
+
+/* Contenedor de mensajes */
+.message-container {
+    margin: 40px auto;
+    padding: 30px;
+    background: linear-gradient(to bottom, #f3e5f5, #e1bee7);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    text-align: center;
+    border: 2px solid #ab47bc;
+}
+
+.btn {
+    background: linear-gradient(to right, #ab47bc, #8e24aa);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(142, 36, 170, 0.4);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(142, 36, 170, 0.6);
+}
+
+.message {
+    font-size: 1.4rem;
+    color: #4a148c;
+    min-height: 100px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+/* Sección de Razones */
+.reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.reason-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border-left: 5px solid #ab47bc;
+}
+
+.reason-card:hover {
+    transform: translateY(-5px);
+}
+
+.reason-card h3 {
+    color: #7b1fa2;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Sección de Mensajes */
+.messages-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.message-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #ab47bc;
+}
+
+.message-card h3 {
+    color: #7b1fa2;
+    margin-bottom: 10px;
+}
+
+/* Animaciones */
+@keyframes growStem {
+    to { height: 180px; }
+}
+
+@keyframes growLeaf {
+    to { height: 50px; width: 65px; }
+}
+
+@keyframes growFlower {
+    to { width: 100px; height: 100px; }
+}
+
+@keyframes growPetal {
+    to { width: 60px; height: 70px; }
+}
+
+/* Corazones flotantes */
+.hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.heart {
+    position: absolute;
+    font-size: 20px;
+    opacity: 0;
+    animation: fall 10s linear infinite, fade 10s ease-in infinite;
+    color: #e91e63;
+}
+
+@keyframes fall {
+    from { transform: translateY(-100px) rotate(0deg); }
+    to { transform: translateY(100vh) rotate(360deg); }
+}
+
+@keyframes fade {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 0.7; }
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(to right, #ab47bc, #7b1fa2);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .nav-links {
+        margin-top: 1rem;
+        gap: 1rem;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .tulipan {
+        width: 100px;
+        height: 200px;
+    }
+    
+    .reasons-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Ajustar tamaño de tulipanes en móvil */
+    .tulipan .stem {
+        left: 45px;
+        width: 8px;
+    }
+    
+    .tulipan .leaf {
+        left: 53px;
+        bottom: 50px;
+    }
+    
+    .tulipan .flower {
+        left: 25px;
+        top: 20px;
+    }
+    
+    @keyframes growStem {
+        to { height: 120px; }
+    }
+    
+    @keyframes growLeaf {
+        to { height: 35px; width: 45px; }
+    }
+    
+    @keyframes growFlower {
+        to { width: 60px; height: 60px; }
+    }
+    
+    @keyframes growPetal {
+        to { width: 35px; height: 45px; }
+    }
+    
+    .carousel-slide {
+        gap: 15px;
+    }
+}

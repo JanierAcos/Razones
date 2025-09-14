@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tulipanes de Amor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="hearts" id="hearts"></div>
+    
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-heart"></i>
+            <span>Tulipanes de Amor</span>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="nav-link active" data-section="inicio"><i class="fas fa-home"></i> Inicio</a>
+            <a href="#" class="nav-link" data-section="razones"><i class="fas fa-heart"></i> Razones</a>
+            <a href="#" class="nav-link" data-section="mensajes"><i class="fas fa-envelope"></i> Mensajes</a>
+        </div>
+    </nav>
+    
+    <!-- Sección de Inicio -->
+    <section id="inicio" class="section active">
+        <div class="header">
+            <h1>Un Jardín de Tulipanes para Ti</h1>
+            <p>Cada tulipán representa una razón por la que me enamoré de ti. Observa cómo florecen mientras revelan mis sentimientos.</p>
+        </div>
+        
+        <!-- Carrusel de tulipanes -->
+        <div class="carousel-container">
+            <div class="carousel" id="tulipan-carousel">
+                <!-- Los slides del carrusel se generarán con JavaScript -->
+            </div>
+            
+            <button class="carousel-control prev" id="carousel-prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <button class="carousel-control next" id="carousel-next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        
+        <div class="carousel-indicators" id="carousel-indicators">
+            <!-- Los indicadores se generarán con JavaScript -->
+        </div>
+        
+        <div class="message-container">
+            <button id="message-btn" class="btn"><i class="fas fa-quote-left"></i> ¿Por qué me enamoré de ti? <i class="fas fa-quote-right"></i></button>
+            <div id="message" class="message">Haz clic en el botón para descubrir una razón...</div>
+        </div>
+    </section>
+    
+    <!-- Sección de Razones -->
+    <section id="razones" class="section">
+        <div class="header">
+            <h1>Razones por las que me enamoré de ti</h1>
+            <p>Estas son algunas de las muchas razones por las que mi corazón late por ti.</p>
+        </div>
+        
+        <div class="reasons-grid">
+            <div class="reason-card">
+                <h3><i class="fas fa-smile"></i> Tu sonrisa</h3>
+                <p>Tu sonrisa ilumina hasta mi día más oscuro y hace que todo parezca mejor.</p>
+            </div>
+            
+            <div class="reason-card">
+                <h3><i class="fas fa-hand-holding-heart"></i> Tu bondad</h3>
+                <p>Tu corazón generoso y tu forma de cuidar de los demás me enamoraron por completo.</p>
+            </div>
+            
+            <div class="reason-card">
+                <h3><i class="fas fa-laugh"></i> Tu sentido del humor</h3>
+                <p>Nadie me hace reír como tú, incluso en los momentos más difíciles.</p>
+            </div>
+            
+            <div class="reason-card">
+                <h3><i class="fas fa-brain"></i> Tu inteligencia</h3>
+                <p>Me encanta la forma en que ves el mundo y cómo abordas cada situación con sabiduría.</p>
+            </div>
+            
+            <div class="reason-card">
+                <h3><i class="fas fa-heart"></i> Tu pasión</h3>
+                <p>La forma en que te apasionas por las cosas que amas es realmente inspiradora.</p>
+            </div>
+            
+            <div class="reason-card">
+                <h3><i class="fas fa-hands-helping"></i> Tu apoyo</h3>
+                <p>Nunca había encontrado a alguien que me apoyara tanto en todos mis proyectos y sueños.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sección de Mensajes -->
+    <section id="mensajes" class="section">
+        <div class="header">
+            <h1>Mensajes de Amor</h1>
+            <p>Pequeñas notas que expresan lo que siento por ti.</p>
+        </div>
+        
+        <div class="messages-container">
+            <div class="message-card">
+                <h3><i class="fas fa-quote-left"></i> Eres mi todo <i class="fas fa-quote-right"></i></h3>
+                <p>Desde que llegaste a mi vida, todo tiene más color y sentido. Eres la razón por la que mi corazón late con tanta fuerza.</p>
+            </div>
+            
+            <div class="message-card">
+                <h3><i class="fas fa-quote-left"></i> Mi lugar favorito <i class="fas fa-quote-right"></i></h3>
+                <p>El lugar donde más me gusta estar es a tu lado. Contigo he encontrado mi hogar.</p>
+            </div>
+            
+            <div class="message-card">
+                <h3><i class="fas fa-quote-left"></i> Gracias por existir <i class="fas fa-quote-right"></i></h3>
+                <p>A veces me detengo a pensar qué hice para merecerte, y solo puedo decir gracias al destino por ponerte en mi camino.</p>
+            </div>
+            
+            <div class="message-card">
+                <h3><i class="fas fa-quote-left"></i> Eres mi inspiración <i class="fas fa-quote-right"></i></h3>
+                <p>Contigo quiero ser mejor persona cada día. Eres mi motivación para superarme y alcanzar mis sueños.</p>
+            </div>
+            
+            <div class="message-card">
+                <h3><i class="fas fa-quote-left"></i> Te amo <i class="fas fa-quote-right"></i></h3>
+                <p>Estas dos palabras se quedan cortas para describir todo lo que siento por ti, pero las digo con todo mi corazón: Te amo.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <p>Hecho con <i class="fas fa-heart"></i> para la persona más especial</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
